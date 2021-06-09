@@ -11,12 +11,15 @@ This is the homework for E-Commerce Back End.
 ## Video for the application
 
 The following animation shows the application's GET routes to return all categories, all products, and all tags being tested in Insomnia Core:
+
 ![Demo](./Assets/GET.gif)
 
 The following animation shows the application's GET routes to return a single category, a single product, and a single tag being tested in Insomnia Core:
+
 ![Demo](./Assets/GET-1.gif)
 
 The following animation shows the application's POST, PUT, and DELETE routes for categories being tested in Insomnia Core:
+
 ![Demo](./Assets/POST-PUT-DELETE.gif)
 
 
