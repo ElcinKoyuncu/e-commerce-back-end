@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Tag, Product, ProductTag } = require('../../models');
-
+const seedTags = require('../../seeds/tag-seeds');
 // The `/api/tags` endpoint
 
 router.get('/', async (req, res) => {
@@ -60,7 +60,7 @@ router.put('/:id', async (req, res) => {
   }
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', async (req, res) => {
   // delete on tag by its `id` value
   try {
     const tagData = await Tag.destroy({
@@ -78,6 +78,15 @@ router.delete('/:id', (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
+});
+router.post('/seed', (req, res) => {
+  
+
+  res.status(200).json(seedTags());
+
+
+
+
 });
 
 module.exports = router;

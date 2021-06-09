@@ -1,5 +1,7 @@
 const router = require('express').Router();
 const { Product, Category, Tag, ProductTag } = require('../../models');
+const seedProducts = require('../../seeds/product-seeds');
+const seedProductTags = require('../../seeds/product-tag-seeds');
 
 // The `/api/products` endpoint
 
@@ -51,7 +53,8 @@ router.post('/', (req, res) => {
     product_name: req.body.product_name,
     price: req.body.price,
     stock: req.body.stock,
-    tagIds: req.body.tag_id
+    category_id: req.body.category_id,
+    tagIds: req.body.tagIds
   }).then((product) => {
       // if there's product tags, we need to create pairings to bulk create in the ProductTag model
       if (req.body.tagIds.length) {
@@ -134,6 +137,18 @@ router.delete('/:id', async (req, res) => {
     
     res.status(500).json(err);
   }
+});
+router.post('/seed', (req, res) => {
+  
+
+  res.status(200).json(seedProducts());
+
+});
+router.post('/seed/tag', (req, res) => {
+  
+
+  res.status(200).json(seedProductTags());
+
 });
 
 module.exports = router;
