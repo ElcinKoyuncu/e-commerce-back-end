@@ -6,7 +6,7 @@ This is the homework for E-Commerce Back End.
 
 
 ## Link for the repo
-[My homework](https://github.com/ElcinKoyuncu/e-commerce-back-end.git)
+[My homework](https://elcinkoyuncu.github.io/e-commerce-back-end/)
 
 ## Video for the application
 
